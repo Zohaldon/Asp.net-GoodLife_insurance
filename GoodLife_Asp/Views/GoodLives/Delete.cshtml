@@ -1,0 +1,56 @@
+﻿@model GoodLife_Asp.Models.GoodLife
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GoodLife</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MembershipCost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MembershipCost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MembershipDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MembershipDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CustomerId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+<script>
+    function myFunction() {
+        alert("Member @Model.FirstName @Model.LastName Deleted");
+    }
+</script>
